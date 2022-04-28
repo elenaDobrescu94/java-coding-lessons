@@ -2,6 +2,7 @@ package com.coding.lesson1;
 
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  *  @An array A consisting of N integers is given. The dominator of array A is the value that occurs in more than half of the elements of A.
@@ -64,6 +65,7 @@ public class Dominator {
          */
 
         // Thomas
+        /**
         HashMap<Integer, Integer> map = new HashMap<>();
 
         for (int elem : A) {
@@ -81,7 +83,34 @@ public class Dominator {
         }
 
         return -1;
+        */
 
+        //Vlad
+        Map<Integer, Integer> vals = new HashMap<>();
+        for (int i:A){
+            if (!vals.containsKey(i)){
+                vals.put(i,1);
+            }
+            else {
+                vals.put(i, vals.get(i) + 1);
+            }
+        }
+        final int[] max = {0};
+        final int[] maxVal = {0};
+        vals.forEach((key, value) -> {
+            if (value > max[0]) {
+                max[0] = value;
+                maxVal[0] = key;
+            }
+        });
+        if (max[0] < A.length / 2 + 1)
+            return -1;
+        for(int i = 0; i < A.length; i ++){
+            if(A[i] == maxVal[0]){
+                return i;
+            }
+        }
+        return -1;
 
     }
 
