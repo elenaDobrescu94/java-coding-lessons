@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class DominatorTest {
-    solution.Dominator dominator = new solution.Dominator();
+    Dominator dominator = new Dominator();
     final static int MID_RANGE = 50000;
 
     @Test

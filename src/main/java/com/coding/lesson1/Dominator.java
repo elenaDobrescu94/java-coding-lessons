@@ -35,6 +35,7 @@ import java.util.HashMap;
 public class Dominator {
 
     public int solution(int[] A){
+        //Todo - implementation
 
         return -1;
     }
