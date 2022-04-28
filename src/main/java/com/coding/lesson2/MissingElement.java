@@ -2,7 +2,9 @@ package com.coding.lesson2;
 
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -68,6 +70,7 @@ public class MissingElement {
          */
 
         //Diana
+        /**
         int actualSum = 0;
 
         for (int element: A) {
@@ -78,8 +81,44 @@ public class MissingElement {
         int expectedSum = expectedArrayLength * (expectedArrayLength + 1) / 2;
 
         return expectedSum - actualSum;
+         */
 
+        //Vlad
+        if (A.length == 0)
+            return 1;
+        //Todo - implementation
+        Map<Integer, Integer> positions = new HashMap<>();
+        for(int i = 1; i < A.length + 2; i ++){
+            positions.put(i, -1);
+        }
+        for(int i = 0; i < A.length; i ++){
+            positions.put(A[i],i);
+        }
+        for(int i = 1; i <= A.length + 1; i ++){
+            if(positions.get(i) == -1)
+                return i;
+        }
+        return -1;
+
+
+
+        //Sebi
+        /**
+        byte[] B = new byte[A.length+3];
+        for (int i : A) {
+            B[i-1] = 1;
+
+        }
+
+        for (int i = 0; i < B.length-1; i++) {
+            if(B[i] == 0) return i+1;
+        }
+
+        return -1;
+         */
 
 
     }
+
+
 }

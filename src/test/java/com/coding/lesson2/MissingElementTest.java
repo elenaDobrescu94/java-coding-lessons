@@ -23,11 +23,22 @@ public class MissingElementTest {
     }
 
     @Test
+    public void solutionTest221() {
+        int A[] = new int[]{3,4,5,2,6};
+        assertEquals(1, missingElement.solution(A));
+    }
+
+    @Test
     public void solutionTest31() {
         int A[] = new int[100000];
-        for(int i = 0; i< 99999;i++){
-            A[i] = i+1;
+        for(int i = 0; i< 99999;i++){ //99998
+            A[i] = i+1;//99999
         }
+       // +  100000, 100001
+
+        // * N is an integer within the range [0..100,000]; // 100001
+        // * the elements of A are all distinct;
+        //* each element of array A is an integer within the range [1..(N + 1)]. [1...100001]
         assertEquals(100000, missingElement.solution(A));
     }
 
@@ -109,6 +120,55 @@ public class MissingElementTest {
         int[] A = IntStream.rangeClosed(1, 99999)
                 .boxed().mapToInt(Integer::intValue).toArray();
         assertEquals(100000, missingElement.solution(A));
+    }
+
+    @Test
+    public void solutionTest13() {
+        int A[] = new int[]{3,5,1,2};
+        assertEquals(4, missingElement.solution(A));
+    }
+
+    @Test
+    public void solutionTest23() {
+        int A[] = new int[]{3,5,1,2,4,7,9,10};
+        assertEquals(6, missingElement.solution(A));
+    }
+
+    @Test
+    public void solutionTest33() {
+        int A[] = new int[]{3,5,1,2,4,10,12,6,9,8,7,11};
+        assertEquals(13, missingElement.solution(A));
+    }
+
+    @Test
+    public void solutionTest43() {
+        int A[] = new int[]{};
+        assertEquals(1, missingElement.solution(A));
+    }
+
+    @Test
+    public void solutionTest53() {
+        int A[] = new int[99999];
+        for (int i = 0; i < 99999; i ++)
+            A[i] = i + 2;
+        assertEquals(1, missingElement.solution(A));
+    }
+
+    @Test
+    public void solutionTest63() {
+        int A[] = new int[99999];
+        for (int i = 99998; i >= 1; i --)
+            A[i] = i + 2;
+        assertEquals(1, missingElement.solution(A));
+    }
+
+    @Test
+    public void solutionTest73() {
+        int A[] = new int[99999];
+        for (int i = 99997; i >= 1; i --)
+            A[i] = i + 3;
+        A[99998] = 2;
+        assertEquals(1, missingElement.solution(A));
     }
 
 
