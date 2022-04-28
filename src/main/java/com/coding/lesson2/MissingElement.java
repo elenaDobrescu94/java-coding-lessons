@@ -34,8 +34,15 @@ import java.util.stream.IntStream;
 public class MissingElement {
 
     public int solution(int[] A) {
-      //Todo - implementation
+        /** Solution one
+        List<Integer> fullArrayList = IntStream.rangeClosed(1, A.length+1)
+                .boxed().sorted().collect(Collectors.toList());
+        List<Integer> listA = Arrays.stream(A).boxed().sorted().collect(Collectors.toList());
 
-        return -1;
+        fullArrayList.removeAll(listA);
+        return fullArrayList.get(0);
+         */
+
+
     }
 }

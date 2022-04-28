@@ -1,6 +1,7 @@
 package com.coding.lesson1;
 
 
+import java.util.HashMap;
 
 /**
  *  @An array A consisting of N integers is given. The dominator of array A is the value that occurs in more than half of the elements of A.
@@ -34,8 +35,37 @@ package com.coding.lesson1;
 public class Dominator {
 
     public int solution(int[] A){
-        //Todo - implementation
 
+        /**Solution One
+        HashMap<Integer, Integer> freqMap = new HashMap<Integer, Integer>();
+        int size = A.length;
+        int value ;
+
+        for (int i=0;i<size;i++) {
+            if (freqMap.containsKey(A[i])) {
+                freqMap.put(A[i], freqMap.get(A[i]) + 1);
+            }
+            else {
+                freqMap.put(A[i], 1);
+            }
+        }
+
+
+        for (Integer indexValue : freqMap.keySet()) {
+            if (2 * freqMap.get(indexValue) > size) {
+                for (int i = 0; i < size; i++) {
+                    if (A[i] == indexValue) {
+                        return i;
+                    }
+                }
+            }
+        }
         return -1;
+         */
+
+
+
     }
+
+
 }
