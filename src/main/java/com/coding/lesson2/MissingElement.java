@@ -36,7 +36,8 @@ import java.util.stream.IntStream;
 public class MissingElement {
 
     public int solution(int[] A) {
-        /** Solution one
+        // Adi
+        /**
         List<Integer> fullArrayList = IntStream.rangeClosed(1, A.length+1)
                 .boxed().sorted().collect(Collectors.toList());
         List<Integer> listA = Arrays.stream(A).boxed().sorted().collect(Collectors.toList());
@@ -44,6 +45,7 @@ public class MissingElement {
         fullArrayList.removeAll(listA);
         return fullArrayList.get(0);
          */
+
         //Solution Thomas
         /**
         int min = Integer.MAX_VALUE;
@@ -84,6 +86,7 @@ public class MissingElement {
          */
 
         //Vlad
+
         if (A.length == 0)
             return 1;
         //Todo - implementation
