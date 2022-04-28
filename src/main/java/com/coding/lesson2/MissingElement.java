@@ -42,6 +42,43 @@ public class MissingElement {
         fullArrayList.removeAll(listA);
         return fullArrayList.get(0);
          */
+        //Solution Thomas
+        /**
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        int sum = 0;
+        int sumAllElements=0;
+
+
+        for(int i = 0 ; i < A.length; i++) {
+            if(A[i] < min) {
+                min = A[i];
+            }
+            if(A[i] > max) {
+                max = A[i];
+            }
+            sum = sum + A[i];
+        }
+
+        for(int i = min; i <= max; i++) {
+            sumAllElements = sumAllElements + i;
+        }
+
+        return sumAllElements - sum;
+         */
+
+        //Diana
+        int actualSum = 0;
+
+        for (int element: A) {
+            actualSum = actualSum + element;
+        }
+
+        int expectedArrayLength = A.length + 1;
+        int expectedSum = expectedArrayLength * (expectedArrayLength + 1) / 2;
+
+        return expectedSum - actualSum;
+
 
 
     }

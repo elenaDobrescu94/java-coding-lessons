@@ -63,6 +63,24 @@ public class Dominator {
         return -1;
          */
 
+        // Thomas
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        for (int elem : A) {
+            if (map.containsKey(elem)) {
+                map.put(elem, map.get(elem) + 1);
+            } else {
+                map.put(elem, 1);
+            }
+        }
+
+        for(int i = 0; i < A.length; i++) {
+            if(map.get(A[i]) > A.length / 2) {
+                return i;
+            }
+        }
+
+        return -1;
 
 
     }
