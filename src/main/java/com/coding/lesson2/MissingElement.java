@@ -38,13 +38,13 @@ public class MissingElement {
     public int solution(int[] A) {
         // Adi
         /**
-        List<Integer> fullArrayList = IntStream.rangeClosed(1, A.length+1)
-                .boxed().sorted().collect(Collectors.toList());
-        List<Integer> listA = Arrays.stream(A).boxed().sorted().collect(Collectors.toList());
+        List<Integer> fullArrayList = IntStream.rangeClosed(1, A.length+1).
+                sorted().boxed().collect(Collectors.toList());
+        List<Integer> listA = Arrays.stream(A).sorted().boxed().collect(Collectors.toList());
 
         fullArrayList.removeAll(listA);
         return fullArrayList.get(0);
-         */
+        */
 
         //Solution Thomas
         /**
